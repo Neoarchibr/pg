@@ -1,4 +1,4 @@
-console.log("cógido js");
+console.log("código js"); // para achar o código js no browser
 
 const canvas = document.getElementById ("mycanvas");
 const ctx = canvas.getContext ("2d");
