@@ -63,7 +63,7 @@ function startGame(){ //executa tudo quando o botão for apertado
     function drawText(text,x,y,color){
         //texto durr 
         ctx.fillStyle = color;
-        ctx.font = "45px fantasy";
+        ctx.font = "45px sans-serif";
         ctx.fillText(text,x,y)
     }
     
@@ -138,10 +138,14 @@ function startGame(){ //executa tudo quando o botão for apertado
         bola.y += bola.velocityY;
     
         // AI simples p/ controlar a barra do computador
-        let nivelComp = 0.05;
-        computador.y += (bola.y - (computador.y + computador.height/2)) * nivelComp;
+
+        let nivelComp = 0.08;
+        computador.y += ((bola.y - (computador.y + computador.height/2))) * nivelComp;
     
-        if(bola.y - bola.radius < 0 || bola.y + bola.radius > canvas.height){
+        if(bola.y - bola.radius < 0 && bola.velocityY < 0){
+            bola.velocityY = -bola.velocityY;
+        }
+        if(bola.y + bola.radius > canvas.height && bola.velocityY > 0){
             bola.velocityY = -bola.velocityY;
         }
     
