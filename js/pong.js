@@ -140,7 +140,10 @@ function startGame(){ //executa tudo quando o botão for apertado
         let nivelComp = 0.05;
         computador.y += ((bola.y - (computador.y + computador.height/2))) * nivelComp;
     
-        if(bola.y - bola.radius < 0 || bola.y + bola.radius > canvas.height){
+        if(bola.y - bola.radius < 0 && bola.velocityY < 0){
+            bola.velocityY = -bola.velocityY;
+        }
+        if(bola.y + bola.radius > canvas.height && bola.velocityY > 0){
             bola.velocityY = -bola.velocityY;
         }
     
