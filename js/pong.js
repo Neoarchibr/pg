@@ -63,7 +63,7 @@ function startGame(){ //executa tudo quando o botão for apertado
     function drawText(text,x,y,color){
         //texto durr
         ctx.fillStyle = color;
-        ctx.font = "45px fantasy";
+        ctx.font = "45px sans-serif";
         ctx.fillText(text,x,y)
     }
     
