@@ -8,26 +8,56 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Questrial&display=swap" rel="stylesheet"> 
     <title>Pong Game</title>
     <style>
+        body {
+            background-color: rgb(209, 230, 230);
+            color: rgb(8, 114, 138);
+            text-align: center;
+        }
+
         h1 {
             font-family: 'Fjalla One', sans-serif;
+            margin-top: 40px;
+        }
+
+        h4 {
+            margin: 1% auto;
         }
 
         p {
             font-family: 'Questrial', sans-serif;
         }
 
-        .container {
-            text-align: center;
+        .header {
+            margin-bottom: 2%;
+        }
+
+        #container {
             margin: 50px auto;
             width: 100%;
         }
+
+        .game {
+            margin: 5% auto;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
         <h1>
             Jogo de Ping Pong
         </h1>
+    </div>
+    <div id="container">
+        <h4>Dificuldade</h4>
+        <select id="dif" class="btn btn-light dropdown-toggle">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <option value="1">Fácil</option>
+                <option value="2">Médio (padrão) </option>
+                <option value="3">Difícil</option>
+            </div> 
+        </select>
+        <br>
         <br>
         <p>
             Controle: Mouse
@@ -35,7 +65,8 @@
         <br>
         <button id="start" type="button" class="btn btn-info">Iniciar</button>
         <br>
-        <br>
+    </div>
+    <div class="game">
         <canvas id="mycanvas" width="800" height="450"></canvas>
     </div>
 </body>

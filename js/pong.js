@@ -2,7 +2,7 @@ console.log("código js"); // para achar o código js no browser
 
 const canvas = document.getElementById ("mycanvas");
 const ctx = canvas.getContext ("2d");
-
+let nivelComp = 0.08; //nível de dificuldade do IA
 // x e y = coordenadas no canvas
 
 var usuario = {
@@ -61,7 +61,7 @@ function startGame(){ //executa tudo quando o botão for apertado
     }
     
     function drawText(text,x,y,color){
-        //texto durr 
+        //texto durr
         ctx.fillStyle = color;
         ctx.font = "45px sans-serif";
         ctx.fillText(text,x,y)
@@ -78,7 +78,7 @@ function startGame(){ //executa tudo quando o botão for apertado
     
     function render(){
         //chama a função drawRect e limpa td (nesse caso)
-        drawRect(0, 0, canvas.width, canvas.height, "black");
+        drawRect(0, 0, canvas.width, canvas.height, "darkslategrey");
     
         drawNet();
     
@@ -128,7 +128,6 @@ function startGame(){ //executa tudo quando o botão for apertado
         bola.speed = 7;
         bola.velocityX = 5;
         bola.velocityY = 5;
-
         bola.velocityX = -bola.velocityX;
     }
     
@@ -138,8 +137,6 @@ function startGame(){ //executa tudo quando o botão for apertado
         bola.y += bola.velocityY;
     
         // AI simples p/ controlar a barra do computador
-
-        let nivelComp = 0.08;
         computador.y += ((bola.y - (computador.y + computador.height/2))) * nivelComp;
     
         if(bola.y - bola.radius < 0 && bola.velocityY < 0){
@@ -148,7 +145,8 @@ function startGame(){ //executa tudo quando o botão for apertado
         if(bola.y + bola.radius > canvas.height && bola.velocityY > 0){
             bola.velocityY = -bola.velocityY;
         }
-    
+
+
         let player = (bola.x + bola.radius < canvas.width/2) ? usuario : computador; // ? é um if numa linha única
     
         if(colisão(bola,player)){
@@ -195,7 +193,21 @@ function startGame(){ //executa tudo quando o botão for apertado
     let framePerSecond = 50;
     let loop = setInterval(game,1000/framePerSecond);
 
-    document.getElementById("start").style.visibility = "hidden"; //esconde o botão depois de apertado
+    //document.getElementById("start").style.visibility = "hidden"; //esconde o botão depois de apertado
+    document.getElementById("container").style.display = "none";
+}
+
+function dificuldade(){ //define a dificuldade de cada modo
+    var x = document.getElementById("mySelect").selectedIndex;
+    if (x == 1){
+        nivelComp = 0.05; //fácil
+    }
+    else if (x == 2){
+        nivelComp = 0.1; //médio
+    }
+    else if (x == 3){
+        nivelComp = 0.4; //difícil
+    }
 }
 
 document.getElementById("start").addEventListener("click", startGame); //faz com q quando o jogador clique no botão o jogo comece
