@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Cláudia A. Santos">
+    <meta name="keywords" content="Javascript">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Questrial&display=swap" rel="stylesheet"> 
+    <title>Pong Game</title>
+    <style>
+        h1 {
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        p {
+            font-family: 'Questrial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin: 50px auto;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Jogo de Ping Pong
+        </h1>
+        <br>
+        <p>
+            Controle: Mouse
+        </p>
+        <br>
+        <button id="start" type="button" class="btn btn-info">Iniciar</button>
+        <br>
+        <br>
+        <canvas id="mycanvas" width="800" height="450"></canvas>
+    </div>
+</body>
+<script src="js/pong.js"></script>
+</html>
