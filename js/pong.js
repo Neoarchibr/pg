@@ -61,7 +61,7 @@ function startGame(){ //executa tudo quando o botão for apertado
     }
     
     function drawText(text,x,y,color){
-        //texto durr
+        //texto durr 
         ctx.fillStyle = color;
         ctx.font = "45px fantasy";
         ctx.fillText(text,x,y)
@@ -128,7 +128,7 @@ function startGame(){ //executa tudo quando o botão for apertado
         bola.speed = 7;
         bola.velocityX = 5;
         bola.velocityY = 5;
-        
+
         bola.velocityX = -bola.velocityX;
     }
     
