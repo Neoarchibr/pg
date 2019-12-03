@@ -136,7 +136,7 @@ function startGame(){ //executa tudo quando o botão for apertado
     
         // AI simples p/ controlar a barra do computador
         let nivelComp = 0.1;
-        computador.y += ((bola.y - (computador.y + computador.height/2))) * nivelComp;
+        computador.y += (bola.y - (computador.y + computador.height/2)) * nivelComp;
     
         if(bola.y - bola.radius < 0 || bola.y + bola.radius > canvas.height){
             bola.velocityY = -bola.velocityY;
