@@ -2,7 +2,7 @@ console.log("código js"); // para achar o código js no browser
 
 const canvas = document.getElementById ("mycanvas");
 const ctx = canvas.getContext ("2d");
-let nivelComp = 0.01; //nível de dificuldade do IA
+let nivelComp = 0.1; //nível de dificuldade do IA
 // x e y = coordenadas no canvas
 
 var usuario = {
